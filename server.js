@@ -18,23 +18,9 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var mysql = require("mysql");
+var routes = require("./controllers/burgers_controller.js");
+app.use(routes);
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "",
-  database: "burgers_db"
-});
-
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
 
 // // Serve index.handlebars to the root route.
 // app.get("/", function(req, res) {
