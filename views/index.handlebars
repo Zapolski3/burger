@@ -4,19 +4,20 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block sleep=true}}
-    {{/unless}}
+  <p>{{burger_name}}</p>
+    {{!-- {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}} --}}
   {{/each}}
 </ul>
 
-<h2>burger box on the right</h2>
+<h2>New burger box</h2>
 
 <ul>
   {{#each burgers}}
-   {{!-- <p>{{id}}</p> --}}
-   <p>{{burger_name}}</p>
-   <p>{{devoured}}</p>
+  {{#if devoured}}
+   {{> burgers/burger-block devoured=false}}
+   {{/if}}
   {{/each}}
 </ul>
 
