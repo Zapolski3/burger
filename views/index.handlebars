@@ -5,9 +5,9 @@
 <ul>
   {{#each burgers}}
   <p>{{burger_name}}</p>
-    {{!-- {{#if devoured}}
+    {{#unless devoured}}
       {{> burgers/burger-block devoured=false}}
-    {{/if}} --}}
+    {{/unless}}
   {{/each}}
 </ul>
 
@@ -15,8 +15,9 @@
 
 <ul>
   {{#each burgers}}
+  
   {{#if devoured}}
-   {{> burgers/burger-block devoured=false}}
+   <li>{{burger_name}}</li>
    {{/if}}
   {{/each}}
 </ul>
