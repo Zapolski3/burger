@@ -2,25 +2,26 @@
 
 <h2>Initial box for burgers</h2>
 
-<ul>
+{{!-- <ul> --}}
   {{#each burgers}}
-  <p>{{burger_name}}</p>
+  {{!-- <p>{{burger_name}}</p> --}}
     {{#unless devoured}}
+    <p>{{burger_name}}</p>
       {{> burgers/burger-block devoured=false}}
     {{/unless}}
   {{/each}}
-</ul>
+{{!-- </ul> --}}
 
 <h2>New burger box</h2>
 
-<ul>
+{{!-- <ul> --}}
   {{#each burgers}}
   
   {{#if devoured}}
    <li>{{burger_name}}</li>
    {{/if}}
   {{/each}}
-</ul>
+{{!-- </ul> --}}
 
 <h2>Add a Burger</h2>
 <form class="create-form">
